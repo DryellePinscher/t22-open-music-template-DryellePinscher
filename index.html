@@ -17,7 +17,7 @@
     <header class="header">
       <!-- DESENVOLVA AQUI OS ELEMENTOS DO CABEÇALHO -->
       <img src="./src/assets/icons/logo.svg" alt="Logo">
-      <img src="./src/assets/icons/moon-icon.svg" alt="Icone de Lua">
+      <button><img src="./src/assets/icons/moon-icon.svg" alt="Icone de Lua"></button>
     </header>
 
     <!-- CONTEÚDO PRINCIPAL -->
@@ -47,7 +47,7 @@
         <h2>Definir Preço</h2>
         <p>Até <span>R$ 100</span></p>
       </div> 
-      <input type="range" id="range" name="range">
+      <input type="range" id="range" name="range" min="0" max="150" value="150">
       </section>
 
       <!-- SEÇÃO DE ALBUNS -->
@@ -132,6 +132,8 @@
        </div>
       </section>
     </main>
+    <script type="module" src="./src/scripts/index.js"></script>
+    <script type="module" src="./src/scripts/inputRange.js"></script>
+    <script type="module" src="./src/scripts/albumsDatabase.js"></script>
   </body>
-  <script src="./src/scripts/index.js defer"></script>
 </html>

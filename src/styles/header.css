@@ -12,3 +12,8 @@
     max-width: 1024px;
     width: 100%;
 }
+
+.header button {
+    border: none;
+    cursor: pointer;
+}
