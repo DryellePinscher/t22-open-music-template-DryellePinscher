@@ -1,13 +1,14 @@
 // Script Global //
 
 import  { applyInputRangeStyle }  from './inputRange.js';
-import  { albumList }  from './albumsDatabase.js';
 import  { renderElements } from './albumsDatabase.js';
 import  { themeAnalasys } from './theme.js';
+import  { newList } from './api.js';
+const printList = await newList();
 
 function routine() {
     applyInputRangeStyle();
-    renderElements(albumList);
+    renderElements(printList);
     inptRange();
     filtraAlbuns();
     themeAnalasys();
@@ -26,7 +27,7 @@ function inptRange () {
   function filtraAlbuns() {
     const input = document.getElementById('range');
     input.addEventListener("input", (event) => {
-    const albumFiltrado = albumList.filter(album => album.price <= parseInt(input.value));
+    const albumFiltrado = printList.filter(album => album.price <= parseInt(input.value));
     renderElements(albumFiltrado);
     });
 }
