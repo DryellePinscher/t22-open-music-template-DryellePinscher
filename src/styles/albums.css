@@ -17,12 +17,12 @@
     justify-content: space-between;
     flex-wrap: wrap;
     padding: 4px 4px 0px 0px;
-    background-color: var(--color-gray-7);
 }
 
 .itens-list {
     border-radius: 4px;
     background-color: var(--color-gray-7);
+    margin-top: 15px;
 }
 
 .itens-list img {
