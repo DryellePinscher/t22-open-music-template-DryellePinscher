@@ -4,7 +4,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--color-grey-8);
+    background-color: var(--color-gray-8);
     padding: 48px 0px 48px 0px;
     border-bottom: 3px solid var(--color-brand-2);
+    position: fixed;
+    top: 0;
+    max-width: 1024px;
+    width: 100%;
 }
