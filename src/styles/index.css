@@ -15,72 +15,93 @@ background-color: var(--color-gray-1);
     display: flex;
     background: transparent;
 }
+
 .header {
     background-color: var(--color-gray-1);
 }
+
 .header h1 {
     color: var(--color-gray-7);
 }
+
 .header span {
     color: var(--color-brand-1);
 }
+
 .genres-title {
     color: var(--color-gray-7);
 }
+
 .btn-genres {
     background-color: var(--color-gray-2);
     color: var(--color-gray-6);
     border: 1px solid transparent;
 }
+
 .btn-genres:focus {
    background-color: var(--color-gray-7);
    color: var(--color-gray-2); 
 }
+
 .btn-genres:hover {
     border: 1px solid var(--color-gray-7);
 }
+
 .price h2 {
     color: var(--color-gray-7);
 }
+
 .price p {
     color: var(--color-gray-7);
 }
+
 .price span {
     color: var(--color-brand-2);
 }
+
 #range {
     background-color: var(--color-brand-2);
 }
+
 #range::-webkit-slider-thumb{
     border: 0.5rem solid var(--color-brand-2);
 }
+
 .albuns-title {
     color: var(--color-gray-7);
 }
+
 .albuns-list {
     background-color: var(--color-gray-1);
 }
+
 .itens-list {
     background-color: var(--color-gray-2);
 }
+
 .itens-list h3 {
     color: var(--color-gray-7);
 }
+
 .infos {
    color: var(--color-gray-6);
    background-color: var(--color-gray-2)
 }
+
 .buy {
     background-color: var(--color-gray-2)
 }
+
 .buy p {
     color: var(--color-gray-7);
 }
+
 .buy button {
     background-color: var(--color-brand-1);
     border: 1px solid var(--color-brand-1);
     color: #fff;
 }
+
 .buy button:hover {
     background-color: var(--color-brand-2);
 }

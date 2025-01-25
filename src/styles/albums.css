@@ -14,23 +14,31 @@
 
 .albuns-list {
     display: flex;
-    justify-content: flex-start;
-    gap: 46px;
+    justify-content: space-between;
+    gap: 20px;
     flex-wrap: wrap;
-    padding: 4px 4px 0px 0px;
+    padding: 4px;
 }
 
 .itens-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: clamp(18.438rem, 15.587rem + 5.702vw, 19.25rem);
     border-radius: 4px;
     background-color: var(--color-gray-7);
     margin-top: 15px;
 }
 
+.itens-list:hover{
+    background-color: var(--color-gray-6);
+  }
+
 .itens-list img {
-    width: 100%;
-    height: 290px;
-    margin-bottom: 10px;
-    cursor: pointer;
+  border-radius: 4px 4px 0 0;
+  object-fit: cover;
+  height: 290px;
+  cursor: pointer;
 }
 
 .itens-list h3 {

@@ -4,32 +4,42 @@ import  { applyInputRangeStyle }  from './inputRange.js';
 import  { renderElements } from './albumsDatabase.js';
 import  { themeAnalasys } from './theme.js';
 import  { newList } from './api.js';
-const printList = await newList();
 
-function routine() {
-    applyInputRangeStyle();
+let printList = [];
+
+async function routine() {
+  applyInputRangeStyle();
+  await loadAlbumsFromAPI();
+  setupPriceFilter();
+  themeAnalasys();
+}
+
+async function loadAlbumsFromAPI() {
+  try {
+    const albums = await newList();
+    printList = albums.map(album => ({
+      ...album,
+      price: parseFloat(album.price)
+    }));
     renderElements(printList);
-    inptRange();
-    filtraAlbuns();
-    themeAnalasys();
-}
-
-function inptRange () {
-  const slider = document.querySelector('#range');
-  const value = document.querySelector('.value');
-}
-
-  value.textContent = slider.value;
-  slider.oninput = function(){
-      value.textContent = this.value;
+  } catch (error) {
+    console.error("Erro ao carregar os álbuns da API:", error);
   }
-  
-  function filtraAlbuns() {
-    const input = document.getElementById('range');
-    input.addEventListener("input", (event) => {
-    const albumFiltrado = printList.filter(album => album.price <= parseInt(input.value));
-    renderElements(albumFiltrado);
-    });
+}
+
+function setupPriceFilter() {
+  const slider = document.querySelector('#range');
+  const valueDisplay = document.querySelector('.value');
+
+  const formatPrice = (price) => parseFloat(price).toFixed(2).replace('.', ',');
+
+  slider.addEventListener('input', () => {
+    const maxPrice = parseFloat(slider.value);
+    valueDisplay.textContent = formatPrice(maxPrice);
+
+    const filteredAlbums = printList.filter(album => album.price <= maxPrice);
+    renderElements(filteredAlbums);
+  });
 }
 
 routine();
